@@ -1,38 +1,351 @@
-.App {
-  text-align: center;
+body{
+  width: 100%;
+  position: relative;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#maincontainer{
   display: flex;
-  flex-direction: column;
+  background-color: #E5E5E5;
+
+}
+
+#menu{
+  background:white;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#menu .logo{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
+  padding: 20px 0 25px 30px;
 }
 
-.App-link {
-  color: #61dafb;
+#menu .logo img{
+  width: 140px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#menu .items{
+  margin-top: 1px;
+}
+
+#menu .items li{
+   list-style: none;
+   padding: 0 20px;
+   transition: 0.3 ease;
+   margin-bottom: 5px;
+ 
   }
-  to {
-    transform: rotate(360deg);
+
+#menu .items li:hover{
+ background: #2C2E36;
+ cursor: pointer;
+ border-radius: 5px;
+ color: white !important;
+   }
+
+#menu .items li:nth-child(1){
+   border-left: 4px solid #fff;
+   }
+
+
+ #menu .items li i {
+    color: black;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size:1.2rem;
+    margin: 0 10px 25px;
+  }
+
+  #menu .items  a:hover li i,
+  #menu .items  a:hover{
+    color: white;
+
+  }
+
+  #menu .items a {
+   text-decoration: none;
+   color:black;
+   font-weight: 300px;
+   transition: 0.3 ease;
+   /* line-height: 30px; */
+   text-align: left;
+   font-size: .9rem;
+   /* margin: 0 10px 25px; */
+  }
+
+  .sidecompic{
+    width: 200px;
+    height: 160px;
+    position: absolute;
+    bottom:5px ;
+  }
+
+  /* interface */
+
+   #interface{
+     width: calc(100% - 200px);
+     margin-left: 200px;
+     height: 100vh;
+     position: relative;
+   }
+   #interface .navigation{
+    height: 70px;
+     display: flex;
+     align-items: center;
+     justify-content:flex-end;
+     background: white;
+     border-radius: 3px solid  #594ef7;
+     width: 100% ;
+   }
+   
+   /* #interface .navigation .search{
+     display: flex;
+     justify-content: start;
+     align-items: center;
+     padding: 10px 14px;
+     border: 1px solid #E5E7EB;
+     border-radius: 4px;
+    } */
+
+    #interface .navigation .search input{
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+    #interface .navigation .search i{
+      margin-right: 13px;
+    }
+    #interface .navigation .profile{
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #interface .navigation .profile .profileadmin{
+     margin-right: 15px;
+    }
+
+    #interface .navigation .profile .profileadmin>h4{
+      margin: 0px;
+      padding: 0px;
+    }
+    #interface .navigation .profile .profileadmin>p{
+      padding-top:3px;
+      margin: 0;
+      font-size: .85rem;
+      color: gray;
+
+    }
+
+    #interface .navigation .profile i{
+      margin-right: 20px;
+      font-size: 19px;
+      font-weight: 400;
+    }
+    #interface .navigation .profile img{
+      width: 50px;
+     
+      margin-right: 10px;
+    }
+    .taskcontainer{
+      height: 220px;
+      width: 100%;
+      display: flex;
+      color: white;
+      background-color:#2C2E36 ;
+      justify-content: space-between;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      position: relative;
+    }
+
+    .taskimg{
+      position: absolute;
+      right: 0;
+      top: 0;
+     
+
+    }
+    .taskleftsec{
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+    .taskleftsec h1,
+    .taskleftsec p{
+      margin: 0;
+      padding: 4px;
+    }
+    
+
+
+
+    .taskbtn{
+      position: relative;
+      margin-top: 50px;
+      margin-right: 12px;
+      z-index: 1;
+      border: none;
+      border-radius: 20px;
+      font-size: .9rem;
+      padding: 12px 25px;
+    
+    }
+    
+    /* BorderParent */
+    .boardMainContainer{
+      width:92%;
+      position: relative;
+      top: -80px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      z-index: 5;
+      margin-left: 20px;
+      padding: 35px 25px;
+    }
+
+    .boardFirstSec{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+
+    }
+
+    .inputContainer{
+      display: flex;
+      padding-left: 10px;
+      align-items: center;
+      border: 1px solid silver;
+      border-radius: 8px;
+      height: 25px;
+      color: silver;
+      width: 390px;
+    }
+    .inputContainer input{
+      height: 19px;
+      border:none;
+      padding: 3px;
+      margin: 0 10px;
+      
+    }
+    .inputContainer input:focus{
+      
+      outline: none;
+    }
+
+    .inputContainer input::placeholder{
+      color: silver;
+    }
+    
+    .boardFirstSec button{
+      display: flex;
+      width: 200px;
+      height: 28px;
+      text-align: start;
+      border-radius: 8px;
+      border: 1px solid silver;
+      background-color: white;
+      color: silver;
+      justify-content: space-between; 
+      align-items: center; 
+
+    }
+
+   table{
+     border-collapse: collapse;
+     width: 100%;
+
+   } 
+
+   th ,td{
+     text-align: center;
+     padding: 10px;
+    
+   }
+   tr:nth-child(odd){
+     background-color: #FBFCFC;
+
+   }
+   tr:nth-child(1){
+     background-color: #f1f8e9 !important;
+     
+   }
+   td span{
+    text-align: center;
+   }
+
+   progress {
+    accent-color: #003d00;
+  }
+
+  .btn-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-top: 15px;
+  }
+  .btn-group button{
+    border: none;
+  }
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3f51b5;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 750px){
+  #menu{
+    width: 270px;
+    position: fixed;
+    left:-270;
+  }
+  #interface{
+    width: 100%;
+    margin-left: 0px;
+    display: inline-block;
+    position: relative;
+  }
+  #interface .navigation{
+   
+    width: 100%;
+
+  }
+  #interface .navigation .profile{
+    margin-right: 30px;
+  }
+  #values{
+    padding: 30px 30px 0 30px;
+    justify-content: center;
+  }
+
+  #values .val-box{
+  padding: 16px 20px;
+  margin: 10px 20px 10px 0px;
+} 
+
+  #menuicon{
+    display:block;
+  }
+  #menu{
+    display: none;
+    background-color: rgb(83, 35, 113);
   }
 }
+
